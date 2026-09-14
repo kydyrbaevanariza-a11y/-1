@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="kk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>«Адал азамат» 10-Сынып Интерактивті Порталы & «Болашақ қаласы» Квесі</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            emerald: '#10b981',
+                            gold: '#f59e0b',
+                            violet: '#8b5cf6',
+                            cyan: '#06b6d4',
+                            rose: '#f43f5e',
+                            dark: '#090d16',
+                            card: '#111827',
+                        }
+                    },
+                    boxShadow: {
+                        'neo': '4px 4px 0px 0px #000000',
+                        'neo-gold': '4px 4px 0px 0px #f59e0b',
+                        'neo-emerald': '4px 4px 0px 0px #10b981',
+                        'neo-violet': '4px 4px 0px 0px #8b5cf6',
+                        'neo-white': '4px 4px 0px 0px #ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #070a12;
+            color: #f3f4f6;
+            background-image: radial-gradient(rgba(16, 185, 129, 0.08) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        .neo-box {
+            border: 2px solid #374151;
+            box-shadow: 4px 4px 0px 0px #000;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .neo-box:hover {
+            border-color: #10b981;
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 0px 0px #10b981;
+        }
+
+        .neo-btn {
+            border: 2px solid #000000;
+            box-shadow: 3px 3px 0px 0px #000000;
+            transition: all 0.15s ease;
+        }
+
+        .neo-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px 0px #000000;
+        }
+
+        /* Kazakh Ornamental Accent Line SVG Background */
+        .kazakh-ornament-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='20' viewBox='0 0 40 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0 L30 10 L20 20 L10 10 Z M0 10 L10 0 L20 10 L10 20 Z M20 10 L30 0 L40 10 L30 20 Z' fill='none' stroke='%23f59e0b' stroke-width='1.5' stroke-opacity='0.25'/%3E%3C/svg%3E");
+        }
+
+        .gradient-text-emerald {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Print formatting */
+        @media print {
+            body * { visibility: hidden; }
+            #cert-print-modal, #cert-print-modal * { visibility: visible; }
+            #cert-print-modal { position: absolute; left: 0; top: 0; width: 100%; }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #090d16; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+    </style>
+</head>
+<!-- 🎬 ОҢ ЖАҚТАҒЫ ҚАЛҚЫМАЛ ВИДЕО -->
+<div class="floating-video">
+    <video controls>
+        <source src="Новое видео (2).mp4" type="video/mp4">
+        Браузеріңіз видеоны қолдамайды.
+    </video>
+</div>
+<body class="font-sans antialiased text-slate-100 selection:bg-brand-emerald selection:text-slate-950 min-h-screen flex flex-col">
+
+    <!-- Kazakh Ornamental Top Strip -->
+    <div class="h-2 w-full bg-gradient-to-r from-brand-emerald via-brand-gold to-brand-violet kazakh-ornament-bg"></div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b-2 border-slate-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Subtitle -->
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-brand-emerald text-slate-950 font-black text-2xl flex items-center justify-center border-2 border-black shadow-neo-gold">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2 py-0.5 rounded bg-brand-gold/20 text-brand-gold text-[10px] font-bold uppercase tracking-wider border border-brand-gold/40">
+                                «Адал азамат» Тәрбие бағдарламасы
+                            </span>
+                        </div>
+                        <h1 class="text-lg sm:text-xl font-heading font-extrabold text-white tracking-wide">
+                            10-СЫНЫП: <span class="gradient-text-emerald">БІЛІМ & КӘСІП ПОРТАЛЫ</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <!-- Profile Badge & Quick Action -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openProfileModal()" class="hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border-2 border-slate-700 text-xs font-bold text-slate-200 transition">
+                        <div class="w-7 h-7 rounded-lg bg-brand-violet text-white flex items-center justify-center text-xs font-bold">
+                            <i class="fa-solid fa-user-astronaut"></i>
+                        </div>
+                        <div class="text-left">
+                            <span id="nav-student-name" class="block font-bold text-white leading-tight">Оқушы профилі</span>
+                            <span id="nav-student-class" class="text-[10px] text-brand-emerald font-semibold">10 «А» сыныбы</span>
+                        </div>
+                        <i class="fa-solid fa-pen-to-square text-slate-400 text-xs ml-1"></i>
+                    </button>
+
+                    <a href="#live-board" class="px-4 py-2.5 rounded-xl bg-brand-gold text-slate-950 font-heading font-extrabold text-xs uppercase tracking-wider border-2 border-black shadow-neo hover:translate-x-0.5 hover:translate-y-0.5 transition flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span class="hidden md:inline">Сынып Тақтасы (Live)</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs Bar -->
+            <nav class="flex items-center gap-2 overflow-x-auto pb-3 pt-1 text-xs font-bold no-scrollbar border-t border-slate-800/80">
+                <a href="#hero" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 whitespace-nowrap transition">
+                    <i class="fa-solid fa-house mr-1.5 text-brand-emerald"></i>Басты бет
+                </a>
+                <a href="#module-1" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 whitespace-nowrap transition">
+                    <i class="fa-solid fa-compass mr-1.5 text-brand-gold"></i>1. Сауалнама
+                </a>
+                <a href="#module-quest" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 whitespace-nowrap transition text-brand-gold font-extrabold border-brand-gold/50">
+                    <i class="fa-solid fa-gamepad mr-1.5 text-brand-gold animate-bounce"></i>🎮 2. «Болашақ қаласы» Квест
+                </a>
+                <a href="#module-3" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 whitespace-nowrap transition">
+                    <i class="fa-solid fa-chart-pie mr-1.5 text-brand-violet"></i>3. SWOT & Skills
+                </a>
+                <a href="#module-4" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 whitespace-nowrap transition">
+                    <i class="fa-solid fa-scale-balanced mr-1.5 text-brand-cyan"></i>4. Этикалық Кейстер
+                </a>
+                <a href="#module-5" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 whitespace-nowrap transition">
+                    <i class="fa-solid fa-certificate mr-1.5 text-brand-rose"></i>5. Болашаққа Хат
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow space-y-16 pb-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative pt-12 pb-10 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/30 text-xs font-bold">
+                            <i class="fa-solid fa-award"></i>
+                            <span>«Еңбекқорлық және кәсіби біліктілік» біртұтас айлығы</span>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-5xl font-heading font-black text-white leading-tight">
+                            АДАЛ АЗАМАТ – <br>
+                            <span class="gradient-text-gold">БОЛАШАҚ МЕКЕНІНІҢ</span> МАМАНЫ
+                        </h1>
+
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            10-сынып оқушыларына арналған интерактивті кәсіби бағдар беру платформасы. Өз қызығушылықтарыңды танып, заманауи дағдыларды меңгер және «Адал азамат» идеологиясымен болашақ мамандығыңды айқында!
+                        </p>
+
+                        <!-- Quick Profile Setup Card in Hero -->
+                        <div class="p-5 rounded-2xl bg-slate-900 border-2 border-slate-700 neo-box space-y-4">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-emerald flex items-center gap-2">
+                                    <i class="fa-solid fa-id-card"></i>
+                                    1. Оқушы Платформаға Тіркелу:
+                                </span>
+                                <span id="profile-status-tag" class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Тіркелмеген</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <input type="text" id="hero-student-name" placeholder="Толық аты-жөніңіз..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border-2 border-slate-700 text-xs text-white focus:border-brand-emerald focus:outline-none">
+                                <input type="text" id="hero-student-school" placeholder="Мектебіңіз..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border-2 border-slate-700 text-xs text-white focus:border-brand-emerald focus:outline-none">
+                                <input type="text" id="hero-student-class" placeholder="Сыныбыңыз (мысалы: 10 «А»)..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border-2 border-slate-700 text-xs text-white focus:border-brand-emerald focus:outline-none">
+                            </div>
+
+                            <button onclick="saveStudentProfile()" class="w-full py-3 rounded-xl bg-brand-emerald text-slate-950 font-heading font-black text-xs uppercase tracking-wider neo-btn hover:bg-emerald-400 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-circle-check text-sm"></i>
+                                <span>Профильді Сақтау & Бастау</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hero Stats / Values Cards -->
+                    <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-slate-900 border-2 border-slate-800 neo-box hover:border-brand-emerald">
+                            <div class="w-10 h-10 rounded-xl bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-lg font-bold mb-3 border border-brand-emerald/40">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-base text-white">Адалдық</h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Кәсіби саладағы әділдік, жауапкершілік және таза еңбек ұстанымы.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-900 border-2 border-slate-800 neo-box hover:border-brand-gold">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/20 text-brand-gold flex items-center justify-center text-lg font-bold mb-3 border border-brand-gold/40">
+                                <i class="fa-solid fa-fire"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-base text-white">Еңбекқорлық</h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Білімді тереңдету, дағдыларды тоқтаусыз жетілдіру және табандылық.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-900 border-2 border-slate-800 neo-box hover:border-brand-violet">
+                            <div class="w-10 h-10 rounded-xl bg-brand-violet/20 text-brand-violet flex items-center justify-center text-lg font-bold mb-3 border border-brand-violet/40">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-base text-white">Квест-Ойын</h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                «Болашақ қаласы» интерактивті 5 кезеңді квестін өтіп, Адалдық индексін жинау.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-900 border-2 border-slate-800 neo-box hover:border-brand-cyan">
+                            <div class="w-10 h-10 rounded-xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-lg font-bold mb-3 border border-brand-cyan/40">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-base text-white">Сынып Тақтасы</h3>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Барлық оқушы жұмыстарының нақты уақыттағы Real-time жиынтық портфолиосы.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="live-board" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+            <div class="rounded-3xl bg-slate-900 p-6 sm:p-8 border-2 border-slate-800 shadow-2xl relative overflow-hidden">
+                
+                <!-- Section Header & Filters -->
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 border-b border-slate-800 pb-6 mb-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-emerald/10 text-brand-emerald text-xs font-bold border border-brand-emerald/30 mb-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-brand-emerald animate-ping"></span>
+                            <span>Firestore Real-Time Онлайн Дерекқор</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-heading font-black text-white">
+                            СЫНЫП ТАҚТАСЫ: <span class="gradient-text-emerald">ОҚУШЫЛАР ЖҰМЫСЫ</span>
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                            10-сынып оқушыларының орындаған барлық модульдері, квест ойыны нәтижелері мен «Болашаққа хаттары»
+                        </p>
+                    </div>
+
+                    <!-- Search and Module Category Filter Controls -->
+                    <div class="space-y-3 min-w-[280px]">
+                        <div class="relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-500 text-xs"></i>
+                            <input type="text" id="board-search-input" oninput="filterBoardData()" placeholder="Оқушы аты-жөнімен немесе сыныбымен іздеу..." class="w-full pl-9 pr-4 py-2 rounded-xl bg-slate-950 text-xs text-slate-200 border-2 border-slate-700 focus:border-brand-emerald focus:outline-none">
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-400 bg-slate-950 p-2 rounded-xl border border-slate-800">
+                            <span>Барлық жиналған жұмыс:</span>
+                            <span id="board-total-count" class="px-2 py-0.5 rounded bg-brand-emerald text-slate-950 font-extrabold text-xs">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module Type Filter Buttons -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 text-xs font-bold no-scrollbar">
+                    <button onclick="setBoardFilter('ALL')" id="filter-btn-ALL" class="board-filter-btn active px-3.5 py-2 rounded-xl bg-brand-emerald text-slate-950 border-2 border-black font-heading font-extrabold shadow-neo transition">
+                        Барлығы
+                    </button>
+                    <button onclick="setBoardFilter('QUEST')" id="filter-btn-QUEST" class="board-filter-btn px-3.5 py-2 rounded-xl bg-slate-950 text-slate-300 border-2 border-slate-800 hover:border-brand-gold transition">
+                        🎮 «Болашақ қаласы» Квест
+                    </button>
+                    <button onclick="setBoardFilter('QUIZ')" id="filter-btn-QUIZ" class="board-filter-btn px-3.5 py-2 rounded-xl bg-slate-950 text-slate-300 border-2 border-slate-800 hover:border-brand-emerald transition">
+                        1. Сауалнама
+                    </button>
+                    <button onclick="setBoardFilter('SKILLS')" id="filter-btn-SKILLS" class="board-filter-btn px-3.5 py-2 rounded-xl bg-slate-950 text-slate-300 border-2 border-slate-800 hover:border-brand-violet transition">
+                        3. SWOT/Skills
+                    </button>
+                    <button onclick="setBoardFilter('CASES')" id="filter-btn-CASES" class="board-filter-btn px-3.5 py-2 rounded-xl bg-slate-950 text-slate-300 border-2 border-slate-800 hover:border-brand-cyan transition">
+                        4. Кейстер
+                    </button>
+                    <button onclick="setBoardFilter('LETTER')" id="filter-btn-LETTER" class="board-filter-btn px-3.5 py-2 rounded-xl bg-slate-950 text-slate-300 border-2 border-slate-800 hover:border-brand-rose transition">
+                        5. Болашаққа Хат
+                    </button>
+                </div>
+
+                <!-- Student Cards Live Grid Container -->
+                <div id="board-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="col-span-full text-center py-12 text-slate-500">
+                        <i class="fa-solid fa-spinner fa-spin text-3xl text-brand-emerald mb-3"></i>
+                        <p class="text-sm">Firestore дерекқорынан сынып жұмыстары жүктелуде...</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="module-1" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-slate-900 p-6 sm:p-10 border-2 border-slate-800 neo-box">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="px-3 py-1 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/30 text-xs font-bold uppercase tracking-wider">
+                        Модуль 1
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-black text-white mt-2">
+                        «Менің кәсіби бейімділігім» Сауалнамасы
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">
+                        6 интерактивті сұраққа жауап беріп, өзіңіздің негізгі кәсіби бағытыңыз бен икемді дағдыларыңызды анықтаңыз.
+                    </p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="mb-8 bg-slate-950 p-4 rounded-2xl border border-slate-800">
+                    <div class="flex justify-between text-xs font-bold text-slate-400 mb-2">
+                        <span id="quiz-progress-label">Сұрақ 1 / 6</span>
+                        <span id="quiz-progress-percent" class="text-brand-emerald">16%</span>
+                    </div>
+                    <div class="w-full h-3 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+                        <div id="quiz-progress-bar" class="h-full bg-brand-emerald transition-all duration-300" style="width: 16.66%;"></div>
+                    </div>
+                </div>
+
+                <!-- Active Question Box -->
+                <div id="quiz-question-box" class="space-y-6">
+                    <h3 id="quiz-question-text" class="text-lg sm:text-xl font-heading font-bold text-white"></h3>
+                    <div id="quiz-options-container" class="grid grid-cols-1 gap-3"></div>
+                </div>
+
+                <!-- Quiz Completion Result Box -->
+                <div id="quiz-result-box" class="hidden space-y-6">
+                    <div class="p-6 rounded-2xl bg-slate-950 border-2 border-brand-emerald text-center space-y-3">
+                        <div class="w-16 h-16 rounded-2xl bg-brand-emerald/20 text-brand-emerald border-2 border-brand-emerald flex items-center justify-center text-2xl mx-auto">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Сауалнама қорытындысы:</span>
+                        <h3 id="quiz-result-title" class="text-2xl font-heading font-black gradient-text-emerald">...</h3>
+                        <p id="quiz-result-desc" class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">...</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+                            <h4 class="font-bold text-brand-gold mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-briefcase"></i> Сәйкес мамандықтар:
+                            </h4>
+                            <ul id="quiz-result-professions" class="space-y-1.5 text-slate-300"></ul>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+                            <h4 class="font-bold text-brand-cyan mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-gears"></i> Негізгі дағдылар:
+                            </h4>
+                            <ul id="quiz-result-skills" class="space-y-1.5 text-slate-300"></ul>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-brand-emerald/10 border border-brand-emerald/30 text-xs space-y-1">
+                        <span class="font-bold text-brand-emerald flex items-center gap-1.5">
+                            <i class="fa-solid fa-shield-halved"></i> «Адал азамат» Кәсіби Кеңесі:
+                        </span>
+                        <p id="quiz-result-tip" class="text-slate-300 italic">...</p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+                        <button onclick="resetQuiz()" class="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white font-bold text-xs border border-slate-700">
+                            <i class="fa-solid fa-rotate-left mr-1.5"></i> Қайта өту
+                        </button>
+                        <button onclick="saveQuizResultToBoard()" class="px-6 py-2.5 rounded-xl bg-brand-emerald text-slate-950 font-heading font-black text-xs uppercase tracking-wider neo-btn">
+                            <i class="fa-solid fa-paper-plane mr-1.5"></i> Сынып Тақтасына Сақтау
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="module-quest" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-slate-900 p-6 sm:p-10 border-2 border-brand-gold shadow-neo-gold relative overflow-hidden">
+                
+                <!-- Game Header -->
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/10 text-brand-gold border border-brand-gold/40 text-xs font-bold uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-gamepad animate-pulse"></i>
+                        Модуль 2: Интерактивті Квест-Ойын
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-black text-white">
+                        🎮 «БОЛАШАҚ ҚАЛАСЫ: <span class="gradient-text-gold">АДАЛ МАМАН»</span>
+                    </h2>
+                    <p class="text-slate-300 text-xs sm:text-sm mt-2">
+                        5 кезеңнен тұратын квест тапсырмаларын орындап, 2036 жылғы Болашақ мекеніндегі «Адалдық индексіңді» арттыр!
+                    </p>
+                </div>
+
+                <!-- Quest Stage Tracker -->
+                <div class="grid grid-cols-5 gap-2 mb-8 bg-slate-950 p-3 rounded-2xl border border-slate-800 text-[10px] sm:text-xs font-bold text-center">
+                    <div id="quest-tab-1" class="quest-tab p-2 rounded-xl bg-brand-gold text-slate-950 font-extrabold border border-black">1. Аватар</div>
+                    <div id="quest-tab-2" class="quest-tab p-2 rounded-xl bg-slate-900 text-slate-400 border border-slate-800">2. Skills</div>
+                    <div id="quest-tab-3" class="quest-tab p-2 rounded-xl bg-slate-900 text-slate-400 border border-slate-800">3. Этика</div>
+                    <div id="quest-tab-4" class="quest-tab p-2 rounded-xl bg-slate-900 text-slate-400 border border-slate-800">4. Викторина</div>
+                    <div id="quest-tab-5" class="quest-tab p-2 rounded-xl bg-slate-900 text-slate-400 border border-slate-800">5. Нәтиже</div>
+                </div>
+
+                <!-- STAGE 1: Hero Avatar & Values -->
+                <div id="quest-stage-1" class="quest-stage space-y-6">
+                    <h3 class="text-lg font-heading font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-2">
+                        <i class="fa-solid fa-user-astronaut text-brand-gold"></i>
+                        1-Кезең: Кейіпкер аватарын және 3 басты құндылықты таңдаңыз
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                        <div onclick="selectQuestAvatar('cyber-eng', 'AI Инженер', 'fa-robot')" class="avatar-card p-4 rounded-2xl bg-slate-950 border-2 border-slate-800 hover:border-brand-gold cursor-pointer text-center space-y-2 transition">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-gold/20 text-brand-gold flex items-center justify-center text-2xl mx-auto border border-brand-gold/40">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <span class="block font-bold text-xs text-white">AI Инженер</span>
+                        </div>
+
+                        <div onclick="selectQuestAvatar('eco-arch', 'Эко-Урбанист', 'fa-leaf')" class="avatar-card p-4 rounded-2xl bg-slate-950 border-2 border-slate-800 hover:border-brand-emerald cursor-pointer text-center space-y-2 transition">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-2xl mx-auto border border-brand-emerald/40">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <span class="block font-bold text-xs text-white">Эко-Урбанист</span>
+                        </div>
+
+                        <div onclick="selectQuestAvatar('bio-doc', 'Биомедицина маманы', 'fa-dna')" class="avatar-card p-4 rounded-2xl bg-slate-950 border-2 border-slate-800 hover:border-brand-violet cursor-pointer text-center space-y-2 transition">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-violet/20 text-brand-violet flex items-center justify-center text-2xl mx-auto border border-brand-violet/40">
+                                <i class="fa-solid fa-dna"></i>
+                            </div>
+                            <span class="block font-bold text-xs text-white">Био-Маман</span>
+                        </div>
+
+                        <div onclick="selectQuestAvatar('edtech-master', 'Мұғалім-Новатор', 'fa-chalkboard-user')" class="avatar-card p-4 rounded-2xl bg-slate-950 border-2 border-slate-800 hover:border-brand-cyan cursor-pointer text-center space-y-2 transition">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-2xl mx-auto border border-brand-cyan/40">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <span class="block font-bold text-xs text-white">EdTech Мұғалім</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 pt-2">
+                        <label class="block text-xs font-bold text-slate-300">Өзіңізге тән 3 басты құндылықты белгілеңіз:</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                            <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="Адалдық" class="quest-val-cb rounded text-brand-gold"> Адалдық
+                            </label>
+                            <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="Еңбекқорлық" class="quest-val-cb rounded text-brand-gold"> Еңбекқорлық
+                            </label>
+                            <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="Жауапкершілік" class="quest-val-cb rounded text-brand-gold"> Жауапкершілік
+                            </label>
+                            <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="Сыни ойлау" class="quest-val-cb rounded text-brand-gold"> Сыни ойлау
+                            </label>
+                            <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="Эмпатия" class="quest-val-cb rounded text-brand-gold"> Эмпатия
+                            </label>
+                            <label class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" value="Патриотизм" class="quest-val-cb rounded text-brand-gold"> Патриотизм
+                            </label>
+                        </div>
+                    </div>
+
+                    <button onclick="goToQuestStage(2)" class="w-full py-3 rounded-xl bg-brand-gold text-slate-950 font-heading font-black text-xs uppercase tracking-wider neo-btn">
+                        2-Кезеңге Өту <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- STAGE 2: Hard vs Soft Skills matching -->
+                <div id="quest-stage-2" class="quest-stage hidden space-y-6">
+                    <h3 class="text-lg font-heading font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-2">
+                        <i class="fa-solid fa-laptop-code text-brand-emerald"></i>
+                        2-Кезең: Заманауи мамандықтарға дағдыларды сәйкестендіру
+                    </h3>
+
+                    <p class="text-xs text-slate-300">
+                        Болашақ қаласында сұранысқа ие 3 негізгі тапсырмаға сәйкес келетін Soft & Hard Skills комбинациясын таңдаңыз:
+                    </p>
+
+                    <div id="quest-skills-quiz-area" class="space-y-4"></div>
+
+                    <div class="flex gap-3">
+                        <button onclick="goToQuestStage(1)" class="w-1/3 py-3 rounded-xl bg-slate-800 text-slate-300 font-bold text-xs">Артқа</button>
+                        <button onclick="goToQuestStage(3)" class="w-2/3 py-3 rounded-xl bg-brand-gold text-slate-950 font-heading font-black text-xs uppercase tracking-wider neo-btn">
+                            3-Кезеңге Өту <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STAGE 3: Ethical Scale Dilemmas -->
+                <div id="quest-stage-3" class="quest-stage hidden space-y-6">
+                    <h3 class="text-lg font-heading font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-2">
+                        <i class="fa-solid fa-scale-balanced text-brand-violet"></i>
+                        3-Кезең: «Адал азамат» Этикалық Шкаласы
+                    </h3>
+
+                    <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4">
+                        <span class="text-xs font-bold text-brand-violet uppercase block">Тапсырма: Ситуациялық Этикалық таңдау</span>
+                        <p id="quest-dilemma-text" class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                            2036 жыл. Сіз Киберқауіпсіздік орталығының бас маманысыз. Төтенше жағдайда бағдарлама қателігі салдарынан компания қаржысының бір бөлігі аударылмай қалды. Егер сіз бұл туралы бастыққа айтсаңыз, айыппұл төлейсіз. Басқа біреуді айыптауға да мүмкіндік бар.
+                        </p>
+
+                        <div class="space-y-3 pt-2">
+                            <label class="block text-xs font-bold text-slate-400">Сіздің шешіміңіз және Адалдық дәрежеңіз:</label>
+                            <div class="space-y-2">
+                                <button onclick="selectQuestDilemma(10)" class="w-full text-left p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-brand-emerald text-xs text-slate-200 font-medium">
+                                    A) Жағдайды ашық мойындап, қателікті туындаған бойда өз күшіммен жөндеп, сабақ аламын (Адалдық 100%)
+                                </button>
+                                <button onclick="selectQuestDilemma(5)" class="w-full text-left p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-brand-gold text-xs text-slate-200 font-medium">
+                                    B) Әріптестеріммен ақылдасып, жасырын түрде түзеуге тырысамын (Адалдық 50%)
+                                </button>
+                                <button onclick="selectQuestDilemma(2)" class="w-full text-left p-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-brand-rose text-xs text-slate-200 font-medium">
+                                    C) Бұл менің қателігім емес деп жауапкершіліктен қашамын (Адалдық 0%)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button onclick="goToQuestStage(2)" class="w-1/3 py-3 rounded-xl bg-slate-800 text-slate-300 font-bold text-xs">Артқа</button>
+                        <button onclick="goToQuestStage(4)" class="w-2/3 py-3 rounded-xl bg-brand-gold text-slate-950 font-heading font-black text-xs uppercase tracking-wider neo-btn">
+                            4-Кезеңге Өту <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STAGE 4: Logic Quest Quiz -->
+                <div id="quest-stage-4" class="quest-stage hidden space-y-6">
+                    <h3 class="text-lg font-heading font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-2">
+                        <i class="fa-solid fa-brain text-brand-cyan"></i>
+                        4-Кезең: Логикалық Квест-Викторина
+                    </h3>
+
+                    <div id="quest-logic-quiz-box" class="space-y-4"></div>
+
+                    <div class="flex gap-3">
+                        <button onclick="goToQuestStage(3)" class="w-1/3 py-3 rounded-xl bg-slate-800 text-slate-300 font-bold text-xs">Артқа</button>
+                        <button onclick="finishQuestGame()" class="w-2/3 py-3 rounded-xl bg-brand-gold text-slate-950 font-heading font-black text-xs uppercase tracking-wider neo-btn">
+                            🏆 Квестті Аяқтау & Нәтиже Алу
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STAGE 5: Final Quest Results & Publishing -->
+                <div id="quest-stage-5" class="quest-stage hidden text-center space-y-6 py-4">
+                    <div class="w-20 h-20 rounded-3xl bg-brand-gold/20 text-brand-gold border-2 border-brand-gold flex items-center justify-center text-3xl mx-auto shadow-neo-gold">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-bold text-brand-emerald uppercase tracking-wider">Құттықтаймыз! Квест аяқталды</span>
+                        <h3 class="text-3xl font-heading font-black text-white mt-1">«АДАЛ МАМАН» МӘРТЕБЕСІ АЛЫНДЫ</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-center">
+                            <span class="text-[10px] text-slate-400 uppercase font-bold block">Таңдалған Аватар:</span>
+                            <span id="quest-res-avatar" class="font-bold text-xs text-brand-gold">AI Инженер</span>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-center">
+                            <span class="text-[10px] text-slate-400 uppercase font-bold block">Адалдық Индексі:</span>
+                            <span id="quest-res-honesty" class="font-black text-lg text-brand-emerald">100%</span>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-center">
+                            <span class="text-[10px] text-slate-400 uppercase font-bold block">Квест Ұпайы:</span>
+                            <span id="quest-res-score" class="font-black text-lg text-brand-violet">95 / 100</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-4 pt-2">
+                        <button onclick="restartQuestGame()" class="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-xs border border-slate-700">
+                            <i class="fa-solid fa-rotate-left mr-1.5"></i> Қайта Ойнау
+                        </button>
+                        <button onclick="saveQuestResultToBoard()" class="px-6 py-3 rounded-xl bg-brand-gold text-slate-950 font-heading font-black text-xs uppercase tracking-wider neo-btn">
+                            <i class="fa-solid fa-paper-plane mr-1.5"></i> Нәтижені Сынып Тақтасына Жариялау
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="module-3" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-slate-900 p-6 sm:p-10 border-2 border-slate-800 neo-box">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <span class="px-3 py-1 rounded-full bg-brand-violet/10 text-brand-violet border border-brand-violet/30 text-xs font-bold uppercase tracking-wider">
+                        Модуль 3
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-black text-white mt-2">
+                        SWOT-Талдау & Hard vs Soft Skills Тренажеры
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">
+                        Заманауи мамандықтардың күшті/әлсіз жақтарын талдаңыз және дағдыларды сұрыптау тренажерында біліміңізді тексеріңіз.
+                    </p>
+                </div>
+
+                <!-- SWOT Tabs -->
+                <div id="swot-tabs-container" class="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-6"></div>
+
+                <!-- SWOT Matrix 2x2 Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                    <div class="p-5 rounded-2xl bg-slate-950 border-2 border-emerald-500/40 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
+                                S - Strengths (Күшті жақтары)
+                            </span>
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+                        </div>
+                        <ul id="swot-s-items" class="space-y-1.5 text-xs text-slate-300 pt-2"></ul>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-950 border-2 border-amber-500/40 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase tracking-wider text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
+                                W - Weaknesses (Әлсіз жақтары)
+                            </span>
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 text-lg"></i>
+                        </div>
+                        <ul id="swot-w-items" class="space-y-1.5 text-xs text-slate-300 pt-2"></ul>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-950 border-2 border-cyan-500/40 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
+                                O - Opportunities (Мүмкіндіктер)
+                            </span>
+                            <i class="fa-solid fa-rocket text-cyan-400 text-lg"></i>
+                        </div>
+                        <ul id="swot-o-items" class="space-y-1.5 text-xs text-slate-300 pt-2"></ul>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-950 border-2 border-rose-500/40 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-black uppercase tracking-wider text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20">
+                                T - Threats (Қауіптер)
+                            </span>
+                            <i class="fa-solid fa-shield-cat text-rose-400 text-lg"></i>
+                        </div>
+                        <ul id="swot-t-items" class="space-y-1.5 text-xs text-slate-300 pt-2"></ul>
+                    </div>
+                </div>
+
+                <!-- Hard vs Soft Skills Sorting Mini-Game -->
+                <div class="p-6 rounded-2xl bg-slate-950 border-2 border-slate-800 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-white">
+                                🛠️ Hard vs Soft Skills Сұрыптау Тренажеры
+                            </h3>
+                            <p class="text-xs text-slate-400">Пайда болған дағдыны дұрыс бағанға тиісті батырма арқылы бағыттаңыз</p>
+                        </div>
+                        <div class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-brand-emerald">
+                            Ұпай: <span id="skills-trainer-score" class="text-white">0</span> / <span id="skills-trainer-total">8</span>
+                        </div>
+                    </div>
+
+                    <div id="skills-trainer-box" class="text-center py-6 px-4 bg-slate-900 rounded-2xl border border-slate-800 space-y-2">
+                        <span class="text-[10px] uppercase tracking-wider text-brand-emerald font-bold block">Ағымдағы Дағды:</span>
+                        <h4 id="skills-trainer-item-title" class="text-xl font-heading font-bold text-white">...</h4>
+                        <p id="skills-trainer-item-desc" class="text-xs text-slate-400 max-w-md mx-auto">...</p>
+                    </div>
+
+                    <div id="skills-trainer-btns" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <button onclick="handleSkillsChoice('hard')" class="py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs neo-btn">
+                            <i class="fa-solid fa-laptop-code mr-1"></i> HARD SKILLS (Кәсіби/Техникалық)
+                        </button>
+                        <button onclick="handleSkillsChoice('soft')" class="py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs neo-btn">
+                            <i class="fa-solid fa-users mr-1"></i> SOFT SKILLS (Тұлғалық/Икемді)
+                        </button>
+                    </div>
+
+                    <div id="skills-trainer-completed" class="hidden text-center py-4 space-y-3">
+                        <span class="text-brand-emerald font-bold text-sm">Тамаша! Барлық дағдылар сұрыпталды!</span>
+                        <br>
+                        <button onclick="saveSkillsResultToBoard()" class="px-6 py-2.5 rounded-xl bg-brand-violet text-white font-heading font-bold text-xs uppercase neo-btn">
+                            <i class="fa-solid fa-paper-plane mr-1.5"></i> Сынып Тақтасына Жіберу
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="module-4" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-slate-900 p-6 sm:p-10 border-2 border-slate-800 neo-box">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <span class="px-3 py-1 rounded-full bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/30 text-xs font-bold uppercase tracking-wider">
+                        Модуль 4
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-black text-white mt-2">
+                        «Адал азамат» Ситуациялық Кейстері
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">
+                        Кәсіби және мектеп өмірінде кездесетін этикалық дилеммаларды шешіп, түсініктемелерді зерделеңіз.
+                    </p>
+                </div>
+
+                <div id="cases-cards-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <section id="module-5" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl bg-slate-900 p-6 sm:p-10 border-2 border-brand-rose shadow-neo hover:border-brand-rose transition">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <span class="px-3 py-1 rounded-full bg-brand-rose/10 text-brand-rose border border-brand-rose/30 text-xs font-bold uppercase tracking-wider">
+                        Модуль 5
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-heading font-black text-white mt-2">
+                        «Болашаққа Хат» & «Адал Маман» Сертификаты
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">
+                        Өзіңіздің 10 жылдан кейінгі мақсаттарыңыз бен «Адал азамат» сертіңізді жазып, ресми сертификат алыңыз.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Letter Form -->
+                    <form onsubmit="handleLetterSubmit(event)" class="lg:col-span-6 space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Оқушының Аты-жөні:</label>
+                            <input type="text" id="letter-input-name" required placeholder="Мысалы: Асанғали Нұрланов" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border-2 border-slate-700 text-xs text-white focus:border-brand-rose focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Мектебіңіз мен Сыныбыңыз:</label>
+                            <input type="text" id="letter-input-class" required placeholder="Мысалы: №17 Мектеп, 10 «А» сыныбы" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border-2 border-slate-700 text-xs text-white focus:border-brand-rose focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Таңдаған болашақ мамандығыңыз:</label>
+                            <input type="text" id="letter-input-job" required placeholder="Мысалы: Киберқауіпсіздік инженері" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border-2 border-slate-700 text-xs text-white focus:border-brand-rose focus:outline-none">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">10 жылдан кейінгі басты мақсатыңыз (Болашаққа хат):</label>
+                            <textarea id="letter-input-goal" rows="3" required placeholder="Өзіңіздің 10 жылдан кейінгі арманыңыз бен еңбегіңіз туралы хат жазыңыз..." class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border-2 border-slate-700 text-xs text-white focus:border-brand-rose focus:outline-none"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Жеке өмірлік Адалдық Сертіңіз / Ұраныңыз:</label>
+                            <input type="text" id="letter-input-motto" required placeholder="Мысалы: «Адал еңбек – табыс пен абырой кепілі»" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border-2 border-slate-700 text-xs text-white focus:border-brand-rose focus:outline-none">
+                        </div>
+
+                        <div class="pt-2 flex flex-col gap-2">
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-rose text-white font-heading font-black text-xs uppercase tracking-wider neo-btn hover:bg-rose-600 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-certificate"></i>
+                                <span>Сертификатты Алдын-Ала Қарау</span>
+                            </button>
+
+                            <button type="button" onclick="sendLetterToBoard()" class="w-full py-3.5 rounded-xl bg-brand-emerald text-slate-950 font-heading font-black text-xs uppercase tracking-wider neo-btn hover:bg-emerald-400 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Сынып Тақтасына Жариялау (Live Wall)</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Certificate Preview Card -->
+                    <div id="cert-print-modal" class="lg:col-span-6 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 border-2 border-brand-gold shadow-2xl relative overflow-hidden text-white space-y-4">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                            <div>
+                                <span class="text-[10px] uppercase font-bold text-brand-gold tracking-widest block">«Адал азамат» Біртұтас бағдарламасы</span>
+                                <h4 class="text-base font-heading font-black text-white">«АДАЛ МАМАН» СЕРТИФИКАТЫ</h4>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center border border-brand-gold/40 text-lg">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <div>
+                                <span class="text-slate-400 block text-[10px]">Берілді:</span>
+                                <p id="cert-preview-name" class="font-bold text-sm text-brand-gold">Оқушының Аты-жөні</p>
+                                <span id="cert-preview-class" class="text-slate-400 text-[11px]">Мектеп & 10-Сынып</span>
+                            </div>
+
+                            <div>
+                                <span class="text-slate-400 block text-[10px]">Таңдаған Болашақ Мамандығы:</span>
+                                <p id="cert-preview-job" class="font-bold text-brand-emerald">Мамандық атауы</p>
+                            </div>
+
+                            <div>
+                                <span class="text-slate-400 block text-[10px]">10 Жылдық Болашаққа Хат:</span>
+                                <p id="cert-preview-goal" class="italic text-slate-300 bg-slate-950/80 p-2.5 rounded-xl border border-slate-800 text-[11px] leading-relaxed">
+                                    "Болашаққа жазылған мақсат хаты мұнда көрінеді..."
+                                </p>
+                            </div>
+
+                            <div>
+                                <span class="text-slate-400 block text-[10px]">Адалдық Серті:</span>
+                                <p id="cert-preview-motto" class="font-bold text-brand-rose text-[11px]">
+                                    «Адал еңбек – табыс кепілі»
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-500">
+                            <span>Берілген күні: <span id="cert-preview-date">11.09.2026</span></span>
+                            <span>№ ADAL-2026-10</span>
+                        </div>
+
+                        <div class="pt-2 flex gap-2">
+                            <button onclick="window.print()" class="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-print"></i> Басып Шығару
+                            </button>
+                            <button onclick="copyCertificateText()" class="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-copy"></i> Көшіру
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Student Portfolio Consolidated Detail Modal -->
+    <div id="portfolio-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md hidden p-4">
+        <div class="bg-slate-900 border-2 border-brand-emerald rounded-3xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto space-y-5 shadow-2xl relative">
+            <button onclick="closePortfolioModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center text-xs">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+
+            <div class="border-b border-slate-800 pb-4">
+                <span class="text-[10px] uppercase font-bold text-brand-emerald tracking-wider block">Оқушының Жеке Кәсіби Портфолиосы</span>
+                <h3 id="port-modal-name" class="text-2xl font-heading font-black text-white">Оқушы Аты-жөні</h3>
+                <p id="port-modal-class" class="text-xs text-slate-400">Мектебі & Сыныбы</p>
+            </div>
+
+            <!-- Portfolio Modules Overview List -->
+            <div id="port-modal-content" class="space-y-4"></div>
+
+            <button onclick="closePortfolioModal()" class="w-full py-3 rounded-xl bg-slate-800 text-white font-bold text-xs">
+                Жабу
+            </button>
+        </div>
+    </div>
+
+    <!-- Student Profile Setup Modal -->
+    <div id="profile-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-md hidden p-4">
+        <div class="bg-slate-900 border-2 border-brand-gold rounded-3xl p-6 max-w-md w-full space-y-4 shadow-2xl">
+            <h3 class="text-xl font-heading font-black text-white">Оқушы Профилін Жаңарту</h3>
+            
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Аты-жөніңіз:</label>
+                <input type="text" id="modal-student-name" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Мектебіңіз:</label>
+                <input type="text" id="modal-student-school" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-400 uppercase mb-1">Сыныбыңыз:</label>
+                <input type="text" id="modal-student-class" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+            </div>
+
+            <div class="flex gap-2 pt-2">
+                <button onclick="closeProfileModal()" class="w-1/2 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-xs">Бас тарту</button>
+                <button onclick="saveModalProfile()" class="w-1/2 py-2.5 rounded-xl bg-brand-gold text-slate-950 font-bold text-xs neo-btn">Сақтау</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Modal -->
+    <div id="toast-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm hidden p-4">
+        <div class="bg-slate-900 border-2 border-brand-emerald rounded-2xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl">
+            <div id="toast-icon-bg" class="w-12 h-12 rounded-full bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-xl mx-auto border border-brand-emerald/40">
+                <i id="toast-icon" class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <h4 id="toast-title" class="font-heading font-bold text-lg text-white">Хабарлама</h4>
+                <p id="toast-msg" class="text-xs text-slate-300 mt-1">Әрекет сәтті орындалды!</p>
+            </div>
+            <button onclick="closeToast()" class="w-full py-2 rounded-xl bg-brand-emerald text-slate-950 font-bold text-xs">Жабу</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500 space-y-2">
+        <p class="font-bold text-slate-400">«Адал азамат» біртұтас тәрбие бағдарламасы аясындағы сынып сағаты</p>
+        <p>10-сынып оқушыларына арналған интерактивті білім және кәсіби бағдар беру порталы</p>
+        <p class="text-[10px] text-slate-600">© 2026 Барлық құқықтар қорғалған.</p>
+    </footer>
+
+    <script>
+        class SoundFX {
+            constructor() {
+                this.ctx = null;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    this.ctx = new AudioContext();
+                }
+            }
+
+            playClick() {
+                this.init();
+                if (!this.ctx) return;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(800, this.ctx.currentTime + 0.05);
+                gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.05);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + 0.05);
+            }
+
+            playCorrect() {
+                this.init();
+                if (!this.ctx) return;
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(523.25, now); // C5
+                osc.frequency.setValueAtTime(659.25, now + 0.08); // E5
+                osc.frequency.setValueAtTime(783.99, now + 0.16); // G5
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.linearRampToValueAtTime(0.01, now + 0.3);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            }
+
+            playWrong() {
+                this.init();
+                if (!this.ctx) return;
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(220, now);
+                osc.frequency.setValueAtTime(180, now + 0.1);
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.linearRampToValueAtTime(0.01, now + 0.25);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.25);
+            }
+
+            playFanfare() {
+                this.init();
+                if (!this.ctx) return;
+                const now = this.ctx.currentTime;
+                const notes = [523.25, 659.25, 783.99, 1046.50];
+                notes.forEach((freq, idx) => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = 'triangle';
+                    osc.frequency.value = freq;
+                    gain.gain.setValueAtTime(0.25, now + idx * 0.1);
+                    gain.gain.linearRampToValueAtTime(0.01, now + idx * 0.1 + 0.3);
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start(now + idx * 0.1);
+                    osc.stop(now + idx * 0.1 + 0.3);
+                });
+            }
+        }
+
+        const sfx = new SoundFX();
+        document.addEventListener('click', () => sfx.init(), { once: true });
+
+        // Global Toast Notification Helper
+        function showToast(title, msg, isError = false) {
+            const modal = document.getElementById('toast-modal');
+            const iconBg = document.getElementById('toast-icon-bg');
+            const icon = document.getElementById('toast-icon');
+
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-msg').innerText = msg;
+
+            if (isError) {
+                iconBg.className = "w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl mx-auto border border-rose-500/40";
+                icon.className = "fa-solid fa-triangle-exclamation";
+                sfx.playWrong();
+            } else {
+                iconBg.className = "w-12 h-12 rounded-full bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-xl mx-auto border border-brand-emerald/40";
+                icon.className = "fa-solid fa-circle-check";
+                sfx.playCorrect();
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeToast() {
+            document.getElementById('toast-modal').classList.add('hidden');
+        }
+
+        window.studentProfile = {
+            name: '',
+            school: '',
+            studentClass: ''
+        };
+
+        function saveStudentProfile() {
+            const name = document.getElementById('hero-student-name').value.trim();
+            const school = document.getElementById('hero-student-school').value.trim();
+            const sClass = document.getElementById('hero-student-class').value.trim();
+
+            if (!name || !sClass) {
+                showToast("Мәлімет толық емес", "Өтініш, Аты-жөніңіз бен Сыныбыңызды жазыңыз!", true);
+                return;
+            }
+
+            window.studentProfile = { name, school, studentClass: sClass };
+            updateProfileUI();
+
+            // Auto sync inputs in letter form
+            document.getElementById('letter-input-name').value = name;
+            document.getElementById('letter-input-class').value = `${school ? school + ', ' : ''}${sClass}`;
+
+            showToast("Профиль Сақталды!", `Қош келдіңіз, ${name}! Енді тапсырмаларды орындауға дайынсыз.`);
+        }
+
+        function updateProfileUI() {
+            const { name, studentClass } = window.studentProfile;
+            if (name) {
+                document.getElementById('nav-student-name').innerText = name;
+                document.getElementById('nav-student-class').innerText = studentClass || '10-Сынып';
+                document.getElementById('profile-status-tag').innerText = "Тіркелген";
+                document.getElementById('profile-status-tag').className = "text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+            }
+        }
+
+        function openProfileModal() {
+            document.getElementById('modal-student-name').value = window.studentProfile.name || '';
+            document.getElementById('modal-student-school').value = window.studentProfile.school || '';
+            document.getElementById('modal-student-class').value = window.studentProfile.studentClass || '';
+            document.getElementById('profile-modal').classList.remove('hidden');
+        }
+
+        function closeProfileModal() {
+            document.getElementById('profile-modal').classList.add('hidden');
+        }
+
+        function saveModalProfile() {
+            const name = document.getElementById('modal-student-name').value.trim();
+            const school = document.getElementById('modal-student-school').value.trim();
+            const sClass = document.getElementById('modal-student-class').value.trim();
+
+            if (!name) return;
+
+            window.studentProfile = { name, school, studentClass: sClass };
+            document.getElementById('hero-student-name').value = name;
+            document.getElementById('hero-student-school').value = school;
+            document.getElementById('hero-student-class').value = sClass;
+
+            updateProfileUI();
+            closeProfileModal();
+            showToast("Жаңартылды!", "Профиль сәтті жаңартылды.");
+        }
+
+        const quizQuestions = [
+            {
+                q: "1. Бос уақытыңызда қай іспен айналысқан ұнайды?",
+                opts: [
+                    { t: "Код жазу, жаңа бағдарламалар немесе гаджеттерді зерттеу", track: "IT" },
+                    { t: "Адамдарға көмектесу, медицина немесе биология оқу", track: "MED" },
+                    { t: "Іс-шаралар ұйымдастыру, біреуге сабақ түсіндіру", track: "PED" },
+                    { t: "Сурет салу, видео монтаждау немесе дизайн жасау", track: "CREATIVE" }
+                ]
+            },
+            {
+                q: "2. Мектепте кай пәннен жоғары нәтиже көрсетесіз?",
+                opts: [
+                    { t: "Информатика, алгебра, физика", track: "IT" },
+                    { t: "Биология, химия, анатомия", track: "MED" },
+                    { t: "Тарих, әдебиет, шет тілдері", track: "PED" },
+                    { t: "Сызу, өнер, дизайн, география", track: "CREATIVE" }
+                ]
+            },
+            {
+                q: "3. Болашақта қандай проблеманы шешкіңіз келеді?",
+                opts: [
+                    { t: "Жасанды интеллект арқылы үдерістерді цифрландыру", track: "IT" },
+                    { t: "Аурулардың жаңа емін табу және адам өмірін ұзарту", track: "MED" },
+                    { t: "Сапалы білім беру мен саналы ұрпақ тәрбиелеу", track: "PED" },
+                    { t: "Экологиялық әрі эстетикалық заманауи орта құру", track: "CREATIVE" }
+                ]
+            },
+            {
+                q: "4. Жұмыс орныңыз қандай болғанын қалайсыз?",
+                opts: [
+                    { t: "Қашықтан немесе заманауи IT стартап кеңсесі", track: "IT" },
+                    { t: "Медициналық зертхана немесе клиника", track: "MED" },
+                    { t: "Мектеп, университет немесе коворкинг орталығы", track: "PED" },
+                    { t: "Дизайн студиясы, креативті хаб", track: "CREATIVE" }
+                ]
+            },
+            {
+                q: "5. Сіздің ең басты мықты жағыңыз қандай?",
+                opts: [
+                    { t: "Логикалық ойлау және алгоритмдік талдау", track: "IT" },
+                    { t: "Эмпатия, сабырлылық және қамқорлық", track: "MED" },
+                    { t: "Ойды анық жеткізу және адамдармен тіл табысу", track: "PED" },
+                    { t: "Креативтілік және визуалды эстетика", track: "CREATIVE" }
+                ]
+            },
+            {
+                q: "6. «Адал азамат» ретінде елге қай салада пайда келтіргіңіз келеді?",
+                opts: [
+                    { t: "Цифрлық қауіпсіздік пен технологиялық прогресс", track: "IT" },
+                    { t: "Халық денсаулығын сақтау мен генофондты қорғау", track: "MED" },
+                    { t: "Саналы, адал әрі білімді азаматтар тәрбиелеу", track: "PED" },
+                    { t: "Ұлттық мәдениет пен заманауи өнерді дамыту", track: "CREATIVE" }
+                ]
+            }
+        ];
+
+        let quizIndex = 0;
+        let quizTrackScores = { IT: 0, MED: 0, PED: 0, CREATIVE: 0 };
+        window.userQuizResult = null;
+
+        function renderQuizQuestion() {
+            const current = quizQuestions[quizIndex];
+            document.getElementById('quiz-question-text').innerText = current.q;
+            document.getElementById('quiz-progress-label').innerText = `Сұрақ ${quizIndex + 1} / ${quizQuestions.length}`;
+            
+            const pct = Math.round(((quizIndex + 1) / quizQuestions.length) * 100);
+            document.getElementById('quiz-progress-percent').innerText = `${pct}%`;
+            document.getElementById('quiz-progress-bar').style.width = `${pct}%`;
+
+            const container = document.getElementById('quiz-options-container');
+            container.innerHTML = '';
+
+            current.opts.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-brand-emerald hover:bg-slate-900 transition font-medium text-xs sm:text-sm text-slate-200 flex items-center justify-between group";
+                btn.innerHTML = `
+                    <span>${opt.t}</span>
+                    <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-brand-emerald transition"></i>
+                `;
+                btn.onclick = () => {
+                    sfx.playClick();
+                    quizTrackScores[opt.track]++;
+                    quizIndex++;
+                    if (quizIndex < quizQuestions.length) {
+                        renderQuizQuestion();
+                    } else {
+                        finishQuiz();
+                    }
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function finishQuiz() {
+            document.getElementById('quiz-question-box').classList.add('hidden');
+            document.getElementById('quiz-result-box').classList.remove('hidden');
+
+            let top = 'IT';
+            let max = -1;
+            for (const k in quizTrackScores) {
+                if (quizTrackScores[k] > max) {
+                    max = quizTrackScores[k];
+                    top = k;
+                }
+            }
+
+            const data = {
+                IT: {
+                    title: "IT & Цифрлық Технологиялар маманы",
+                    desc: "Сізде логикалық және алгоритмдік ойлау жоғары. Заманауи AI және киберқауіпсіздік саласында үлкен әлеуетіңіз бар.",
+                    professions: ["AI Инженер", "Киберқауіпсіздік маманы", "Software Developer", "Data Scientist"],
+                    skills: ["Бағдарламалау", "Сыни ойлау", "Ағылшын тілі", "Логика"],
+                    tip: "Технологияларды тек табыс емес, қоғамның цифрлық қауіпсіздігі мен игілігі үшін адал пайдаланыңыз."
+                },
+                MED: {
+                    title: "Биомедицина & Денсаулық сақтау маманы",
+                    desc: "Сізде жоғары эмпатия мен ғылыми ізденіске құштарлық бар. Адам өмірін сақтауға бейімсіз.",
+                    professions: ["Биомедицина инженері", "Геномдық хирург", "Фармацевт-зерттеуші", "Денсаулық аналитигі"],
+                    skills: ["Анатомия & Химия", "Нақтылық", "Сабырлылық", "Эмпатия"],
+                    tip: "Адам өміріне жауапты маман ретінде әрқашан кәсіби адалдық пен Гиппократ антына адал болыңыз."
+                },
+                PED: {
+                    title: "Педагогика & Әлеуметтік Инновация",
+                    desc: "Сіз адамдармен тіл табысуға, білім беруге және жаңа ұрпақты бағыттауға шеберсіз.",
+                    professions: ["EdTech Мұғалім-новатор", "Білім беру методологы", "Психолог-коуч", "HR Менеджер"],
+                    skills: ["Ораторлық өнер", "Тайм-менеджмент", "Эмоционалды интеллект", "Икемділік"],
+                    tip: "Жас ұрпаққа өзіңіздің біліміңізбен қатар, еңбекқорлық пен отаншылдық құндылықтарын үлгі етіңіз."
+                },
+                CREATIVE: {
+                    title: "Креатив & Инновациялық Дизайн",
+                    desc: "Сіз креативті, визуализатор әрі идеяларға бай тұлғасыз. Әлемді әдемі етуге құштарсыз.",
+                    professions: ["UX/UI Дизайнер", "Эколог-урбанист", "3D Модельдеу маманы", "Арт-директор"],
+                    skills: ["Креативтілік", "Графикалық бағдарламалар", "Трендтер талдауы", "Талғам"],
+                    tip: "Өнеріңіз бен дизайныңыз арқылы отандық мәдениет пен заманауи эстетиканы әлемге танытыңыз."
+                }
+            };
+
+            const res = data[top];
+            window.userQuizResult = res;
+
+            document.getElementById('quiz-result-title').innerText = res.title;
+            document.getElementById('quiz-result-desc').innerText = res.desc;
+
+            document.getElementById('quiz-result-professions').innerHTML = res.professions.map(p => `<li><i class="fa-solid fa-check text-brand-emerald mr-1.5"></i>${p}</li>`).join('');
+            document.getElementById('quiz-result-skills').innerHTML = res.skills.map(s => `<li><i class="fa-solid fa-star text-brand-gold mr-1.5"></i>${s}</li>`).join('');
+            document.getElementById('quiz-result-tip').innerText = res.tip;
+
+            sfx.playFanfare();
+        }
+
+        function resetQuiz() {
+            quizIndex = 0;
+            quizTrackScores = { IT: 0, MED: 0, PED: 0, CREATIVE: 0 };
+            document.getElementById('quiz-result-box').classList.add('hidden');
+            document.getElementById('quiz-question-box').classList.remove('hidden');
+            renderQuizQuestion();
+        }
+
+        renderQuizQuestion();
+
+        window.questState = {
+            stage: 1,
+            avatar: { id: 'cyber-eng', title: 'AI Инженер', icon: 'fa-robot' },
+            values: [],
+            skillsAnswers: 0,
+            honestyScore: 100,
+            logicScore: 0
+        };
+
+        function selectQuestAvatar(id, title, icon) {
+            window.questState.avatar = { id, title, icon };
+            document.querySelectorAll('.avatar-card').forEach(el => el.classList.remove('border-brand-gold', 'bg-slate-900'));
+            event.currentTarget.classList.add('border-brand-gold', 'bg-slate-900');
+            sfx.playClick();
+        }
+
+        function goToQuestStage(stageNum) {
+            sfx.playClick();
+
+            if (stageNum === 2) {
+                // Collect stage 1 values
+                const checkboxes = document.querySelectorAll('.quest-val-cb:checked');
+                window.questState.values = Array.from(checkboxes).map(cb => cb.value);
+                renderQuestStage2();
+            } else if (stageNum === 4) {
+                renderQuestStage4();
+            }
+
+            window.questState.stage = stageNum;
+
+            document.querySelectorAll('.quest-stage').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`quest-stage-${stageNum}`).classList.remove('hidden');
+
+            document.querySelectorAll('.quest-tab').forEach((el, idx) => {
+                if (idx + 1 === stageNum) {
+                    el.className = "quest-tab p-2 rounded-xl bg-brand-gold text-slate-950 font-extrabold border border-black";
+                } else {
+                    el.className = "quest-tab p-2 rounded-xl bg-slate-900 text-slate-400 border border-slate-800";
+                }
+            });
+        }
+
+        function renderQuestStage2() {
+            const container = document.getElementById('quest-skills-quiz-area');
+            container.innerHTML = `
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+                    <span class="text-xs font-bold text-brand-emerald">1. AI Инженеріне ең маңызды комбинация:</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <button onclick="answerQuestSkill(true)" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-brand-emerald text-left">
+                            A) Python/Math (Hard) + Сыни ойлау (Soft)
+                        </button>
+                        <button onclick="answerQuestSkill(false)" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-brand-rose text-left">
+                            B) Сурет салу (Hard) + Биология (Hard)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+                    <span class="text-xs font-bold text-brand-gold">2. Мұғалім-новатор үшін басты дағды:</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        <button onclick="answerQuestSkill(true)" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-brand-emerald text-left">
+                            A) Эмоционалды интеллект (Soft) + EdTech құралдары (Hard)
+                        </button>
+                        <button onclick="answerQuestSkill(false)" class="p-2.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-brand-rose text-left">
+                            B) Тек заңдарды жатқа білу
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function answerQuestSkill(isCorrect) {
+            if (isCorrect) {
+                window.questState.skillsAnswers += 10;
+                sfx.playCorrect();
+            } else {
+                sfx.playWrong();
+            }
+        }
+
+        function selectQuestDilemma(score) {
+            window.questState.honestyScore = score * 10;
+            if (score >= 8) sfx.playCorrect();
+            else sfx.playWrong();
+            showToast("Этикалық Таңдау Қабылданды", `Адалдық индексіңіз: ${window.questState.honestyScore}%`);
+        }
+
+        function renderQuestStage4() {
+            const container = document.getElementById('quest-logic-quiz-box');
+            container.innerHTML = `
+                <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2 text-xs">
+                    <span class="font-bold text-brand-cyan">1-Логикалық Сұрақ:</span>
+                    <p class="text-slate-300">«Адал азамат» идеологиясында жұмыс сапасы мен абыройы неге байланысты?</p>
+                    <div class="space-y-1.5 pt-1">
+                        <button onclick="answerQuestLogic(true)" class="w-full text-left p-2.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-brand-emerald">
+                            A) Таза еңбекке, жауапкершілікке және үздіксіз ізденіске
+                        </button>
+                        <button onclick="answerQuestLogic(false)" class="w-full text-left p-2.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-brand-rose">
+                            B) Тек таныс-тамыр мен сәттілікке
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function answerQuestLogic(isCorrect) {
+            if (isCorrect) {
+                window.questState.logicScore += 50;
+                sfx.playCorrect();
+            } else {
+                sfx.playWrong();
+            }
+        }
+
+        function finishQuestGame() {
+            goToQuestStage(5);
+            sfx.playFanfare();
+
+            const totalScore = Math.min(100, window.questState.skillsAnswers + window.questState.logicScore + Math.round(window.questState.honestyScore / 2));
+
+            document.getElementById('quest-res-avatar').innerText = window.questState.avatar.title;
+            document.getElementById('quest-res-honesty').innerText = `${window.questState.honestyScore}%`;
+            document.getElementById('quest-res-score').innerText = `${totalScore} / 100`;
+        }
+
+        function restartQuestGame() {
+            window.questState = {
+                stage: 1,
+                avatar: { id: 'cyber-eng', title: 'AI Инженер', icon: 'fa-robot' },
+                values: [],
+                skillsAnswers: 0,
+                honestyScore: 100,
+                logicScore: 0
+            };
+            goToQuestStage(1);
+        }
+
+        const swotDatabase = [
+            {
+                id: 'ai-dev',
+                title: 'AI Инженер & Data Scientist',
+                s: ["Жоғары сұраныс пен жалақы", "Халықаралық компанияларда қашықтан жұмыс", "Процестерді автоматтандыру"],
+                w: ["Тұрақты қайта оқу талабы", "Жоғары ментальды жүктеме", "Компьютер алдында ұзақ отыру"],
+                o: ["Медицина мен білімді ЖИ арқылы дамыту", "Өз IT стартапыңды ашу", "Ақылды қалаларды жобалау"],
+                t: ["Технологиялардың тым жылдам өзгеруі", "Кибершабуылдар мен этикалық тәуекелдер", "Жоғары бәсеке"]
+            },
+            {
+                id: 'biomed',
+                title: 'Биоинженер & Фармацевт',
+                s: ["Адам өмірін сақтау миссиясы", "Ғылыми жаңалықтар беделі", "Тұрақты әрі абыройлы мамандық"],
+                w: ["Ұзақ жылдар бойы оқу қажеттілігі", "Жоғары моральдық жауапкершілік", "Тәжірибелік рисктер"],
+                o: ["Дерттерге қарсы генотерапия жасау", "Халықаралық зертханалармен жұмыс", "Биотех өндірісі"],
+                t: ["Қаржыландыру шектеулері", "Күрделі бюрократия", "Биоэтикалық кедергілер"]
+            }
+        ];
+
+        let activeSwotIndex = 0;
+
+        function renderSwotModule() {
+            const tabsContainer = document.getElementById('swot-tabs-container');
+            tabsContainer.innerHTML = '';
+
+            swotDatabase.forEach((item, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap ${
+                    idx === activeSwotIndex 
+                    ? 'bg-brand-violet text-white neo-btn' 
+                    : 'bg-slate-950 text-slate-400 border border-slate-800 hover:bg-slate-900'
+                }`;
+                btn.innerText = item.title;
+                btn.onclick = () => {
+                    sfx.playClick();
+                    activeSwotIndex = idx;
+                    renderSwotModule();
+                };
+                tabsContainer.appendChild(btn);
+            });
+
+            const current = swotDatabase[activeSwotIndex];
+            document.getElementById('swot-s-items').innerHTML = current.s.map(i => `<li class="flex items-start gap-1.5"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>${i}</li>`).join('');
+            document.getElementById('swot-w-items').innerHTML = current.w.map(i => `<li class="flex items-start gap-1.5"><i class="fa-solid fa-minus text-amber-400 mt-0.5"></i>${i}</li>`).join('');
+            document.getElementById('swot-o-items').innerHTML = current.o.map(i => `<li class="flex items-start gap-1.5"><i class="fa-solid fa-rocket text-cyan-400 mt-0.5"></i>${i}</li>`).join('');
+            document.getElementById('swot-t-items').innerHTML = current.t.map(i => `<li class="flex items-start gap-1.5"><i class="fa-solid fa-xmark text-rose-400 mt-0.5"></i>${i}</li>`).join('');
+        }
+
+        renderSwotModule();
+
+        // Skills Trainer Game Logic
+        const skillsGameList = [
+            { title: "Python/JavaScript Бағдарламалау", type: "hard", desc: "Код жазу және бағдарламалық архитектура" },
+            { title: "Эмпатия және Эмоционалды Интеллект", type: "soft", desc: "Адамдарды түсіну және сыйластықпен қарым-қатынас" },
+            { title: "3D Модельдеу (CAD/Blender)", type: "hard", desc: "Инженерлік немесе анимациялық графика" },
+            { title: "Тайм-Менеджмент (Уақытты басқару)", type: "soft", desc: "Жобаларды мерзімінде сапалы аяқтау" },
+            { title: "Деректер талдауы (Data Science)", type: "hard", desc: "Математикалық модельдер мен статистика" },
+            { title: "Сыни ойлау (Critical Thinking)", type: "soft", desc: "Ақпаратты объективті бағалау және шешім қабылдау" },
+            { title: "Киберқауіпсіздік аудиті", type: "hard", desc: "Жүйені бұзудан қорғау протоколдары" },
+            { title: "Келіссөз жүргізу & Ораторлық", type: "soft", desc: "Өз ойын анық әрі дәлелді жеткізу" }
+        ];
+
+        let trainerIdx = 0;
+        window.userTrainerScore = 0;
+
+        function renderSkillsTrainer() {
+            if (trainerIdx < skillsGameList.length) {
+                const item = skillsGameList[trainerIdx];
+                document.getElementById('skills-trainer-item-title').innerText = item.title;
+                document.getElementById('skills-trainer-item-desc').innerText = item.desc;
+                document.getElementById('skills-trainer-score').innerText = window.userTrainerScore;
+                document.getElementById('skills-trainer-total').innerText = skillsGameList.length;
+            } else {
+                document.getElementById('skills-trainer-box').classList.add('hidden');
+                document.getElementById('skills-trainer-btns').classList.add('hidden');
+                document.getElementById('skills-trainer-completed').classList.remove('hidden');
+                sfx.playFanfare();
+            }
+        }
+
+        function handleSkillsChoice(choice) {
+            const current = skillsGameList[trainerIdx];
+            if (choice === current.type) {
+                window.userTrainerScore++;
+                sfx.playCorrect();
+            } else {
+                sfx.playWrong();
+            }
+            trainerIdx++;
+            renderSkillsTrainer();
+        }
+
+        renderSkillsTrainer();
+
+        const casesList = [
+            {
+                title: "1-Кейс: Ата-ана қалауы мен өз таңдауың",
+                desc: "Сен IT маманы болуды армандайсың, ал ата-анаң өздері қалаған басқа мамандықты ұсынады. Қандай қадам жасайсың?",
+                opts: [
+                    { t: "Ата-анаммен сабырлы сөйлесіп, IT саласының мүмкіндіктерін дәлелді түрде көрсетемін.", score: 10, tip: "Өте дұрыс! «Адал азамат» өз болашағы үшін жауапкершілік алып, сыйластықпен түсіндіре біледі." },
+                    { t: "Қарсыласып, сөйлеспей қоямын.", score: 2, tip: "Диалогтан қашу мәселені шешпейді." }
+                ]
+            },
+            {
+                title: "2-Кейс: Әділдік пен Таныс-тамырлық",
+                desc: "Жұмыс орныңда сенен біліктілігі төмен бастықтың танысы жоғары лауазымға өтіп барады.",
+                opts: [
+                    { t: "Өз нәтижелерім мен еңбегімді ашық көрсетіп, меритократия қағидасын талап етемін.", score: 10, tip: "Тамаша! Кәсіби біліктілік пен адал еңбек – әділдік негізі." },
+                    { t: "Мен де таныс іздей бастаймын.", score: 1, tip: "Бұл «Адал азамат» қағидаттарына қайшы келеді." }
+                ]
+            },
+            {
+                title: "3-Кейс: Сапа әлде Тез бітіру?",
+                desc: "Жоба мерзімі тақады. Тапсырманы үстірт жасап өткізе салу мүмкіндігі бар.",
+                opts: [
+                    { t: "Басшыға ашық айтып, сапалы аяқтау үшін қосымша уақыт сураймын.", score: 10, tip: "Керемет! Кәсіби адалдық – сапа кепілі." },
+                    { t: "Ақауды жасырып тапсыра саламын.", score: 2, tip: "Жұмысқа үстірт қарау – жауапсыздық." }
+                ]
+            }
+        ];
+
+        function renderCasesModule() {
+            const grid = document.getElementById('cases-cards-grid');
+            grid.innerHTML = casesList.map((c, idx) => `
+                <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold text-brand-cyan uppercase">Кейс #${idx + 1}</span>
+                        <h4 class="font-heading font-bold text-sm text-white mt-1">${c.title}</h4>
+                        <p class="text-xs text-slate-300 mt-2 leading-relaxed">${c.desc}</p>
+                    </div>
+
+                    <div class="space-y-2 pt-2">
+                        ${c.opts.map((o, oIdx) => `
+                            <button onclick="answerCase(${idx}, ${oIdx})" class="w-full text-left p-2.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-brand-cyan transition text-xs text-slate-200">
+                                ${o.t}
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <div id="case-feedback-${idx}" class="hidden p-2.5 rounded-xl text-xs font-medium"></div>
+                </div>
+            `).join('');
+        }
+
+        function answerCase(cIdx, oIdx) {
+            const opt = casesList[cIdx].opts[oIdx];
+            const feedback = document.getElementById(`case-feedback-${cIdx}`);
+            feedback.classList.remove('hidden', 'bg-emerald-500/20', 'text-emerald-300', 'bg-rose-500/20', 'text-rose-300');
+
+            if (opt.score >= 8) {
+                feedback.classList.add('bg-emerald-500/20', 'text-emerald-300');
+                sfx.playCorrect();
+            } else {
+                feedback.classList.add('bg-rose-500/20', 'text-rose-300');
+                sfx.playWrong();
+            }
+
+            feedback.innerText = opt.tip;
+        }
+
+        renderCasesModule();
+
+        function handleLetterSubmit(e) {
+            if (e) e.preventDefault();
+
+            const name = document.getElementById('letter-input-name').value;
+            const sClass = document.getElementById('letter-input-class').value;
+            const job = document.getElementById('letter-input-job').value;
+            const goal = document.getElementById('letter-input-goal').value;
+            const motto = document.getElementById('letter-input-motto').value;
+
+            document.getElementById('cert-preview-name').innerText = name || "Оқушы Аты-жөні";
+            document.getElementById('cert-preview-class').innerText = sClass || "10-Сынып";
+            document.getElementById('cert-preview-job').innerText = job || "Мамандық";
+            document.getElementById('cert-preview-goal').innerText = `"${goal}"`;
+            document.getElementById('cert-preview-motto').innerText = `«${motto}»`;
+
+            const today = new Date();
+            document.getElementById('cert-preview-date').innerText = `${String(today.getDate()).padStart(2, '0')}.${String(today.getMonth() + 1).padStart(2, '0')}.${today.getFullYear()}`;
+
+            showToast("Сертификат Әзірленді!", "Нәтижені төменде қарап, басып шығара аласыз.");
+        }
+
+        function copyCertificateText() {
+            const name = document.getElementById('cert-preview-name').innerText;
+            const job = document.getElementById('cert-preview-job').innerText;
+            const motto = document.getElementById('cert-preview-motto').innerText;
+
+            const text = `«Адал Азамат» Сертификаты\nОқушы: ${name}\nМамандық: ${job}\nАдалдық Серті: ${motto}`;
+            
+            const area = document.createElement('textarea');
+            area.value = text;
+            document.body.appendChild(area);
+            area.select();
+            document.execCommand('copy');
+            document.body.removeChild(area);
+
+            showToast("Көшірілді!", "Сертификат мәтіні алмасу буферіне көшірілді.");
+        }
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase Setup with environment fallback
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'adal-azamat-10class-portal';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "AIzaSyDemoKeyForPublicTestingOnly12345",
+            authDomain: "adal-azamat.firebaseapp.com",
+            projectId: "adal-azamat",
+            storageBucket: "adal-azamat.appspot.com",
+            messagingSenderId: "1234567890",
+            appId: "1:1234567890:web:abcdef123456"
+        };
+
+        let app, auth, db;
+        let currentUser = null;
+        let globalBoardSubmissions = [];
+        let currentBoardFilter = 'ALL';
+
+        try {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+
+            // Mandatory Auth Flow Rule 3
+            const startAuth = async () => {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            };
+
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    currentUser = user;
+                    subscribeToFirestoreBoard();
+                }
+            });
+
+            startAuth().catch(err => console.warn("Firebase Auth fallback active", err));
+
+        } catch (e) {
+            console.error("Firebase init failed:", e);
+        }
+
+        // Mandatory Path Rule 1: /artifacts/{appId}/public/data/{collectionName}
+        function getCollectionRef() {
+            return collection(db, 'artifacts', appId, 'public', 'data', 'student_submissions');
+        }
+
+        // Subscribe to Firestore Realtime Updates
+        function subscribeToFirestoreBoard() {
+            if (!db || !currentUser) return;
+
+            const colRef = getCollectionRef();
+            // Mandatory Rule 2: Simple query without complex orderBy/where
+            onSnapshot(colRef, (snapshot) => {
+                globalBoardSubmissions = [];
+                snapshot.forEach(doc => {
+                    globalBoardSubmissions.push({ id: doc.id, ...doc.data() });
+                });
+
+                // Client-side sorting by timestamp (newest first)
+                globalBoardSubmissions.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+                window.filterBoardData();
+            }, (error) => {
+                console.error("Firestore onSnapshot error:", error);
+            });
+        }
+
+        // Render Live Board Cards
+        window.renderBoardUI = function(items) {
+            const grid = document.getElementById('board-cards-grid');
+            const countEl = document.getElementById('board-total-count');
+
+            if (!grid) return;
+            countEl.innerText = items.length;
+
+            if (items.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-500">
+                        <i class="fa-solid fa-folder-open text-3xl mb-2 text-slate-600"></i>
+                        <p class="text-sm font-bold text-slate-400">Бұл модуль бойынша әлі жұмыстар сақталған жоқ.</p>
+                        <p class="text-xs text-slate-500 mt-1">Оқушылар кез келген модульді өтіп, "Сынып тақтасына сақтау" батырмасын баса алады.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = items.map(item => `
+                <div onclick="openStudentPortfolioModal('${escapeHTML(item.name)}')" class="bg-slate-950 p-5 rounded-2xl border-2 border-slate-800 hover:border-brand-emerald cursor-pointer transition shadow-lg space-y-3 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-start justify-between border-b border-slate-800 pb-3 mb-3">
+                            <div>
+                                <h4 class="font-heading font-bold text-base text-white group-hover:text-brand-emerald transition flex items-center gap-1.5">
+                                    <i class="fa-solid fa-user-graduate text-brand-gold text-xs"></i>
+                                    <span>${escapeHTML(item.name || 'Оқушы')}</span>
+                                </h4>
+                                <span class="text-xs text-slate-400">${escapeHTML(item.studentClass || '10-Сынып')}</span>
+                            </div>
+                            <span class="px-2.5 py-0.5 rounded bg-brand-emerald/10 text-brand-emerald text-[10px] font-bold border border-brand-emerald/30">
+                                ${getTypeBadge(item.type)}
+                            </span>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-slate-300">
+                            ${item.job ? `<div><span class="text-slate-500 text-[10px] block uppercase font-bold">Мамандық:</span><span class="font-bold text-brand-gold">${escapeHTML(item.job)}</span></div>` : ''}
+                            
+                            ${item.questAvatar ? `
+                                <div class="bg-slate-900 p-2 rounded-xl border border-slate-800 grid grid-cols-2 gap-2 text-[11px]">
+                                    <div><span class="text-slate-500 text-[10px] block">Квест Аватар:</span><span class="font-bold text-brand-emerald">${escapeHTML(item.questAvatar)}</span></div>
+                                    <div><span class="text-slate-500 text-[10px] block">Адалдық Индексі:</span><span class="font-bold text-brand-violet">${item.honestyScore || 100}%</span></div>
+                                </div>
+                            ` : ''}
+
+                            ${item.quizTrack ? `<div><span class="text-slate-500 text-[10px] block uppercase font-bold">Сауалнама нәтижесі:</span><span class="font-bold text-brand-cyan">${escapeHTML(item.quizTrack)}</span></div>` : ''}
+
+                            ${item.goal ? `<div><span class="text-slate-500 text-[10px] block uppercase font-bold">10 жылдық мақсаты:</span><p class="italic text-slate-300 bg-slate-900/60 p-2 rounded-lg border border-slate-800 text-[11px]">"${escapeHTML(item.goal)}"</p></div>` : ''}
+
+                            ${item.motto ? `<div><span class="text-slate-500 text-[10px] block uppercase font-bold">Адалдық серті:</span><p class="font-bold text-brand-rose text-[11px]">«${escapeHTML(item.motto)}»</p></div>` : ''}
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-500">
+                        <span><i class="fa-regular fa-clock mr-1"></i>${item.dateStr || 'Бүгін'}</span>
+                        <span class="text-brand-emerald font-bold">Портфолионы көру <i class="fa-solid fa-chevron-right ml-1 text-[8px]"></i></span>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        function getTypeBadge(type) {
+            switch(type) {
+                case 'QUEST': return '🎮 Квест';
+                case 'QUIZ': return '1. Сауалнама';
+                case 'SKILLS': return '3. SWOT/Skills';
+                case 'CASES': return '4. Кейстер';
+                case 'LETTER': return '5. Болашаққа Хат';
+                default: return 'Модуль';
+            }
+        }
+
+        // Filter Live Board by Category & Name Search
+        window.setBoardFilter = function(category) {
+            currentBoardFilter = category;
+            document.querySelectorAll('.board-filter-btn').forEach(btn => {
+                btn.className = "board-filter-btn px-3.5 py-2 rounded-xl bg-slate-950 text-slate-300 border-2 border-slate-800 transition hover:border-brand-emerald";
+            });
+            document.getElementById(`filter-btn-${category}`).className = "board-filter-btn active px-3.5 py-2 rounded-xl bg-brand-emerald text-slate-950 border-2 border-black font-heading font-extrabold shadow-neo transition";
+            window.filterBoardData();
+        };
+
+        window.filterBoardData = function() {
+            const query = (document.getElementById('board-search-input')?.value || '').toLowerCase().trim();
+
+            let filtered = globalBoardSubmissions;
+
+            if (currentBoardFilter !== 'ALL') {
+                filtered = filtered.filter(item => item.type === currentBoardFilter);
+            }
+
+            if (query) {
+                filtered = filtered.filter(item => 
+                    (item.name && item.name.toLowerCase().includes(query)) ||
+                    (item.studentClass && item.studentClass.toLowerCase().includes(query)) ||
+                    (item.job && item.job.toLowerCase().includes(query))
+                );
+            }
+
+            window.renderBoardUI(filtered);
+        };
+
+        // Open Student Consolidated Portfolio Modal
+        window.openStudentPortfolioModal = function(studentName) {
+            const studentItems = globalBoardSubmissions.filter(item => item.name === studentName);
+            if (studentItems.length === 0) return;
+
+            const first = studentItems[0];
+            document.getElementById('port-modal-name').innerText = first.name;
+            document.getElementById('port-modal-class').innerText = first.studentClass || '10-Сынып';
+
+            const container = document.getElementById('port-modal-content');
+            container.innerHTML = studentItems.map(item => `
+                <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-2 text-xs">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+                        <span class="font-bold text-brand-gold">${getTypeBadge(item.type)}</span>
+                        <span class="text-[10px] text-slate-500">${item.dateStr || ''}</span>
+                    </div>
+
+                    ${item.quizTrack ? `<p><strong class="text-slate-400">Сауалнама бағыты:</strong> ${escapeHTML(item.quizTrack)}</p>` : ''}
+                    ${item.questAvatar ? `<p><strong class="text-slate-400">Квест Аватар:</strong> ${escapeHTML(item.questAvatar)} | <strong class="text-brand-emerald">Адалдық Индексі: ${item.honestyScore || 100}%</strong></p>` : ''}
+                    ${item.skillsScore !== undefined ? `<p><strong class="text-slate-400">Skills Ұпайы:</strong> ${item.skillsScore} / 8</p>` : ''}
+                    ${item.job ? `<p><strong class="text-slate-400">Мамандық:</strong> ${escapeHTML(item.job)}</p>` : ''}
+                    ${item.goal ? `<p class="italic text-slate-300 bg-slate-900 p-2 rounded border border-slate-800">"${escapeHTML(item.goal)}"</p>` : ''}
+                    ${item.motto ? `<p class="font-bold text-brand-rose">«${escapeHTML(item.motto)}»</p>` : ''}
+                </div>
+            `).join('');
+
+            document.getElementById('portfolio-modal').classList.remove('hidden');
+        };
+
+        window.closePortfolioModal = function() {
+            document.getElementById('portfolio-modal').classList.add('hidden');
+        };
+
+        // Save Helpers to Firestore
+        async function pushToBoard(payload) {
+            const today = new Date();
+            const dateStr = `${String(today.getDate()).padStart(2, '0')}.${String(today.getMonth() + 1).padStart(2, '0')}.${today.getFullYear()}`;
+
+            const fullPayload = {
+                name: window.studentProfile.name || 'Оқушы',
+                studentClass: window.studentProfile.studentClass || '10-Сынып',
+                school: window.studentProfile.school || '',
+                dateStr: dateStr,
+                timestamp: Date.now(),
+                ...payload
+            };
+
+            try {
+                if (db && currentUser) {
+                    await addDoc(getCollectionRef(), fullPayload);
+                    showToast("Сынып Тақтасына Сақталды!", "Нәтижеңіз real-time тақтада жарияланды.");
+                } else {
+                    globalBoardSubmissions.unshift({ id: 'local-' + Date.now(), ...fullPayload });
+                    window.filterBoardData();
+                    showToast("Локальды Сақталды!", "Нәтижеңіз экранға шығарылды.");
+                }
+                document.getElementById('live-board').scrollIntoView({ behavior: 'smooth' });
+            } catch (err) {
+                console.error("Error saving to Firestore:", err);
+                showToast("Қателік", "Мәліметті сақтау мүмкін болмады.", true);
+            }
+        }
+
+        window.saveQuizResultToBoard = function() {
+            if (!window.userQuizResult) return;
+            pushToBoard({
+                type: 'QUIZ',
+                quizTrack: window.userQuizResult.title
+            });
+        };
+
+        window.saveQuestResultToBoard = function() {
+            pushToBoard({
+                type: 'QUEST',
+                questAvatar: window.questState.avatar.title,
+                honestyScore: window.questState.honestyScore
+            });
+        };
+
+        window.saveSkillsResultToBoard = function() {
+            pushToBoard({
+                type: 'SKILLS',
+                skillsScore: window.userTrainerScore
+            });
+        };
+
+        window.sendLetterToBoard = function() {
+            const name = document.getElementById('letter-input-name').value.trim();
+            const sClass = document.getElementById('letter-input-class').value.trim();
+            const job = document.getElementById('letter-input-job').value.trim();
+            const goal = document.getElementById('letter-input-goal').value.trim();
+            const motto = document.getElementById('letter-input-motto').value.trim();
+
+            if (!name || !job || !goal || !motto) {
+                showToast("Толық емес", "Өтініш, барлық өрісті толтырыңыз!", true);
+                return;
+            }
+
+            pushToBoard({
+                type: 'LETTER',
+                name: name,
+                studentClass: sClass,
+                job: job,
+                goal: goal,
+                motto: motto
+            });
+        };
+
+        function escapeHTML(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+    </script>
+</body>
+</html>
